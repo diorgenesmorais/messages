@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service
 
 @Service
 class MessageService(val repository: MessagesRepository) {
-    fun getMessages() = repository.findMessages()
+    fun getMessages() = repository.findAll()
 
     @Transactional
     fun saveMessage(message: Message) = repository.save(message)
