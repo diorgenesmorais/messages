@@ -11,4 +11,8 @@ class MessageService(val repository: MessagesRepository) {
 
     @Transactional
     fun saveMessage(message: Message) = repository.save(message)
+
+    fun findByMessage(messageId: Int) = repository.findById(messageId)
+
+    fun deleteMessage(messageId: Int) = repository.deleteById(messageId)
 }
